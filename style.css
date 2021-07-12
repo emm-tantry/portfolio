@@ -1,0 +1,485 @@
+@font-face {
+  src: url(Inter-Regular.ttf);
+  font-family: Inter-Regular;
+}
+
+@font-face {
+  src: url(Inter-Light.ttf);
+  font-family: Inter-Light;
+}
+
+@font-face {
+  src: url(Inter-ExtraLight.ttf);
+  font-family: Inter-ExtraLight;
+}
+
+@font-face {
+  src: url(Inter-Medium.ttf);
+  font-family: Inter-Medium;
+}
+
+@font-face {
+  src: url(Merriweather-BoldItalic.ttf);
+  font-family: BoldItalic;
+}
+
+@font-face {
+  src: url(Merriweather-LightItalic.ttf);
+  font-family: LightItalic;
+}
+
+@font-face {
+  src: url(Merriweather-BlackItalic.ttf);
+  font-family: BlackItalic;
+}
+
+@font-face {
+  src: url(Merriweather-Bold.ttf);
+  font-family: MBold;
+}
+
+@font-face {
+  src: url(Merriweather-Light.ttf);
+  font-family: MLight;
+}
+
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  background-color: #111411;
+  width: 100%;
+}
+
+/* progress indicator */
+.progressbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 0 10px 10px rgba(46,46,46,.5);;
+}
+
+.progressContainer {
+  /* ending bar width */
+  width: 100%;
+  /* bar color for parts before progress is made */
+  background: rgb(20,20,20);
+}
+
+.progressMade {
+  /* bar height */
+  height: 8px;
+  /* progress bar color */
+  background: linear-gradient(234deg, #90eaae, #90eae5, #90eaae, #90eae5);
+  /* initial bar width */
+  width: 0%;
+}
+
+.css-selector {
+    background: linear-gradient(234deg, #90eaae, #90eae5, #90eaae, #90eae5);
+    background-size: 500% 500%;
+
+    -webkit-animation: AnimationName 7s ease infinite;
+    -moz-animation: AnimationName 7s ease infinite;
+    animation: AnimationName 7s ease infinite;
+    height: 95vh;
+    width: 100%;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+.mouse-cursor-gradient-tracking {
+  position: relative;
+  /* background: #7983ff; */
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  color: white;
+  outline: none;
+  overflow: hidden;
+}
+
+.mouse-cursor-gradient-tracking:before {
+  --size: 0;
+  content: '';
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, #c7fcfa, transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.mouse-cursor-gradient-tracking:hover:before {
+  --size: 75em;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 3em;
+  padding-right: 4em;
+  padding-top: 4vh;
+  height: 3em;
+}
+
+.name a:link {
+  font-family: Inter-Medium;
+  font-size: .6em;
+}
+
+.sections {
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header a:link {
+  color: #272b2b;
+  transition: 1s;
+}
+
+.sections a:link {
+  font-family: Inter-Light;
+  font-size: .5em;
+  transition: 1s;
+  color: #272b2b;
+}
+
+.header a:visited {
+  color: #272b2b;
+}
+
+.header, .cover {
+  color: #272b2b;
+  position: relative;
+}
+
+.cover {
+  font-family: Inter-ExtraLight;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 70vh;
+  font-size: 1.15em;
+  padding-left: 4vw;
+  line-height: 2.5em;
+  padding-top: 8vh;
+}
+
+.cover a:link {
+  color: #272b2b;
+  text-decoration: none;
+}
+
+.cover a:visited {
+  color: #272b2b;
+}
+
+.cover em {
+  font-family: LightItalic;
+  font-size: .4em;
+}
+
+#intro {
+  transition: 1s;
+  /* text-decoration: underline; */
+  font-family: Inter-Regular;
+}
+
+#profession {
+  transition: 1s;
+  /* text-decoration: underline; */
+  font-family: BlackItalic;
+}
+
+#school {
+  transition: 1s;
+  /* text-decoration: underline; */
+  font-family: Inter-Regular;
+}
+
+#intro:hover {
+  text-decoration: underline;
+  /* font-family: MBold; */
+}
+
+.fadeIn1 {
+  width: 15vw;
+  height: 15vw;
+  position: absolute;
+  left: 14em;
+  top: 5.3em;
+  transition: .5s;
+  opacity: 0;
+  overflow-y: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 10px #c7fcfa inset;
+  background-image: url(emme.jpg);
+  background-size: 15vw;
+}
+
+#intro:hover~.fadeIn1 {
+  transform: translate(-1em,-1.2em);
+  opacity: 1;
+}
+
+#profession:hover {
+  font-family: BlackItalic;
+  text-decoration: underline;
+}
+
+.fadeIn2 {
+  width: 15vw;
+  height: 15vw;
+  position: absolute;
+  left: 13em;
+  top: 5.8em;
+  transition: .5s;
+  opacity: 0;
+  overflow-y: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 10px #c7fcfa inset;
+  background-image: url(work.jpg);
+  background-size: 20vw;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#profession:hover~.fadeIn2 {
+  transform: translate(.8em,-.7em);
+  opacity: 1;
+}
+
+em {
+  opacity: 0;
+  transition: 1s;
+}
+
+#profession:hover~em {
+  opacity: 1;
+}
+
+#school:hover {
+  /* font-family: MBold; */
+  text-decoration: underline;
+}
+
+.fadeIn3 {
+  width: 15vw;
+  height: 15vw;
+  position: absolute;
+  left: 15.5em;
+  top: 6.4em;
+  transition: .5s;
+  opacity: 0;
+  overflow-y: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 10px #c7fcfa inset;
+  background-image: url(play.gif);
+  background-size: 20vw;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#school:hover~.fadeIn3 {
+  transform: translate(-1em,-.5em);
+  opacity: 1;
+}
+
+#currentPage {
+  text-decoration: underline;
+  color: #272b2b;
+}
+
+.header a:hover {
+  font-size: .65em;
+}
+
+.sections a:hover {
+  font-size: .55em;
+}
+
+.arrow {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding-top: 8vh;
+}
+
+.arrow img {
+  width: 2vw;
+  margin-right: 10vw;
+}
+
+.work {
+  height: 120vw;
+}
+
+.repandu {
+  height: 40vw;
+  display: flex;
+}
+
+.image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.image a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  width: 85%;
+  border-radius: 5px;
+  transition: .5s;
+}
+
+.content {
+  padding: 2%;
+  padding-top: 6.5%;
+  padding-right: 4%;
+  font-family: Inter-Light;
+  width: 50%;
+}
+
+.content h2 {
+  color: #d7e0db;
+  font-size: 1.7em;
+}
+
+.content h3 {
+  color: #434a48;
+  padding-top: .3em;
+  font-size: 1.3em;
+}
+
+.content h4 {
+  color: #939997;
+  padding-top: .7em;
+  font-size: 1.1em;
+  line-height: 1.3em;
+}
+
+.katta {
+  height: 40vw;
+  background-color: #191c1b;
+  display: flex;
+}
+
+.rioraiz {
+  height: 40vw;
+  display: flex;
+}
+
+.button {
+  background-color: #383838;
+  width: 7em;
+  height: 2.3em;
+  border-radius: .5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  transition: 0.5s;
+}
+
+.button:hover {
+  background-color: #90eae5;
+  color: #474a49;
+  transform: scale(1.1);
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
+
+.content a:link {
+  text-decoration: none;
+  color: #8c8c8c;
+  font-family: Inter-Regular;
+  font-size: 1.2em;
+}
+
+.content a:visited {
+  text-decoration: none;
+  color: #8c8c8c;
+  font-family: Inter-Regular;
+}
+
+.specificButton {
+  width: 10em;
+}
+
+.footer {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+}
+
+.footer .designedBy {
+  /* padding-right: 10vw; */
+}
+
+.footer .contact {
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+
+.footer h6:first-child {
+  font-family: MBold;
+}
+
+.footer h6:nth-child(2) {
+  font-family: Inter-Light;
+}
+
+#linkedIn:link h6 {
+  font-family: Inter-Light;
+  text-decoration: none;
+  color: black;
+}
+
+#linkedIn:visited {
+  font-family: Inter-Light;
+  text-decoration: none;
+  color: black;
+}
